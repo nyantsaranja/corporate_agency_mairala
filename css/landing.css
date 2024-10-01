@@ -1,0 +1,78 @@
+/* landing.css */
+
+/* Landing Section Styling */
+.landing {
+    background: url('../images/landing_bg.jpg') no-repeat center center/cover; /* Use your background image */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    text-align: left; /* Align text to the left */
+}
+
+.landing .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the left */
+}
+
+/* Subheading Styles */
+.subheading {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+/* Main Heading Styles */
+.main-heading {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.main-heading .highlight {
+    color: #B89B6F; /* Color for highlighting 'Premium' and 'Free' */
+}
+
+/* Button Styling */
+.btn-download {
+    display: inline-block;
+    background-color: #444;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-download i {
+    margin-left: 10px; /* Spacing between text and icon */
+}
+
+/* Hover effect for the button */
+.btn-download:hover {
+    background-color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-heading {
+        font-size: 1.8rem;
+    }
+
+    .subheading {
+        font-size: 1rem;
+    }
+
+    .btn-download {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    /* Adjust padding for small screens */
+    .landing {
+        padding-left: 3%;
+    }
+}

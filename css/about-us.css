@@ -1,0 +1,171 @@
+/* about-us.css */
+
+/* Main Section Styling */
+.about-us {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section-header {
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.underline {
+    width: 50px;
+    height: 3px;
+    background-color: #B89B6F; /* Maroon color */
+    margin: 10px auto;
+}
+
+.section-header p {
+    font-size: 1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* About Us Content Section */
+.about-content {
+    display: flex;
+    align-items: stretch; /* Ensures both text and image columns stretch to the same height */
+    justify-content: space-between;
+    gap: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 50%; /* 50% width for both columns */
+    padding: 40px 80px 40px 40px; /* Adjust padding: more on the right to push content into skewed area */
+    text-align: left; /* Align text to the left */
+    position: relative;
+    background-color: #f0f0f0; /* Light grey background */
+    z-index: 2;
+    display: flex;
+    flex-direction: column; /* Ensure the content inside grows */
+    justify-content: center; /* Vertically center the content */
+    align-items: flex-start; /* Align content to the left */
+    padding-left: 15%;
+}
+
+.about-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -100px;
+    width: 200%;
+    height: 100%;
+    background-color: #f0f0f0;
+    transform: skewX(20deg); /* Create the diagonal effect */
+    z-index: 1;
+    transform-origin: top right;
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2; /* Keep text above the background */
+}
+
+.about-text p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+}
+
+/* Button Styling: Ensure it's not full-width */
+.btn-read-more {
+    display: inline-block; /* Keeps button inline */
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 2;
+    align-self: flex-start; /* Align button to the left */
+    background-color: transparent; /* Transparent background */
+    border-radius: 5px;
+    border: 2px solid #333; /* Outline border */
+    color: #333;
+}
+
+.btn-read-more:hover {
+    background-color: #333; /* Background color on hover */
+    color: #fff; /* Change text color on hover */
+    border-color: #333;
+}
+
+.btn-read-more::after {
+    content: "→"; /* Arrow icon */
+    display: inline-block;
+    margin-left: 10px; /* Space between text and arrow */
+    transition: transform 0.3s ease; /* Smooth transition for the arrow */
+}
+
+.btn-read-more:hover::after {
+    transform: translateX(5px); /* Move the arrow slightly to the right on hover */
+}
+
+/* Image Column */
+.about-image {
+    flex: 1;
+    max-width: 50%;
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%; /* Make the image fill the height of its container */
+    object-fit: cover; /* Ensure the image covers its container without stretching */
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .about-content {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .about-text {
+        max-width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-text::before {
+        display: none; /* Remove diagonal effect on small screens */
+    }
+
+    .btn-read-more{
+        align-self: center;
+    }
+
+    .about-image {
+        max-width: 100%;
+    }
+
+    .about-image img {
+        height: auto; /* Allow image to adapt to its content in smaller screens */
+    }
+}
