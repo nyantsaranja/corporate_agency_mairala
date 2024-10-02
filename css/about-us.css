@@ -45,7 +45,7 @@
 
 .about-text {
     flex: 1;
-    max-width: 50%; /* 50% width for both columns */
+    max-width: 45%; /* 50% width for both columns */
     padding: 40px 80px 40px 40px; /* Adjust padding: more on the right to push content into skewed area */
     text-align: left; /* Align text to the left */
     position: relative;
