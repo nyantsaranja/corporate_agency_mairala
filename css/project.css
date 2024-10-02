@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.card {
+    position: relative;
+    width: 25%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease;
+}
+
+.card:nth-child(1) {
+    background-image: url('../images/landing_bg.jpg'); /* Replace with your actual image path */
+}
+
+.card:nth-child(2) {
+    background-image: url('../images/landing_bg.jpg');
+}
+
+.card:nth-child(3) {
+    background-image: url('../images/landing_bg.jpg');
+}
+
+.card:nth-child(4) {
+    background-image: url('../images/landing_bg.jpg');
+}
+
+.card-overlay {
+    position: absolute;
+    top: 10px; /* Creates the gap from the top */
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.card-overlay h2 {
+    font-size: 18px; /* Reduced font size for title */
+    margin-bottom: 10px; /* Reduced space between the title and line */
+    text-transform: uppercase; /* Optional: to match the text in the image */
+}
+
+.card-overlay .separator {
+    width: 30px; /* Slightly smaller width for the line */
+    height: 1px; /* Thinner line */
+    background-color: white;
+    margin: 5px 0; /* Reduced margin for smaller space between the line and elements */
+}
+
+.card-overlay p {
+    font-size: 14px; /* Reduced font size for category */
+    margin-top: 10px; /* Reduced space between the line and category */
+    text-transform: uppercase; /* Optional: to match the text in the image */
+    letter-spacing: 1px; /* Optional: for stylistic effect */
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
+.twitter-section {
+    text-align: center;
+    padding: 80px 100px; /* Increased padding for top, bottom, and sides */
+    background-color: #111; /* Dark background */
+    color: #fff; /* White text color */
+}
+
+.twitter-section h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Optional: for a similar look */
+    letter-spacing: 1px;
+}
+
+.twitter-section p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.twitter-section a {
+    font-size: 16px;
+    color: #00acee; /* Twitter blue color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.twitter-section a:hover {
+    color: #0084b4; /* Slightly darker blue on hover */
+}
+
