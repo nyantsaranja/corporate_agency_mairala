@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.text())
         .then(data => {
             aboutUsSection.innerHTML = data;
+            // Automatically updates the copyright year
+            document.getElementById("current-year").textContent = new Date().getFullYear();
         })
         .catch(error => console.error('Error loading About Us section:', error));
 });
+

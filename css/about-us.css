@@ -2,9 +2,9 @@
 
 /* Main Section Styling */
 .about-us {
-    background-color: #f9f9f9;
-    padding: 60px 0;
+    background-color: var(--darker-white);
     text-align: center;
+    padding-top: 80px;
 }
 
 .section-header {
@@ -14,20 +14,20 @@
 .section-header h2 {
     font-size: 2rem;
     font-weight: 600;
-    color: #333;
+    color: var(--color-highlight);
     margin-bottom: 10px;
 }
 
 .underline {
     width: 50px;
     height: 3px;
-    background-color: #B89B6F; /* Maroon color */
+    background-color: var(--color-highlight); /* Maroon color */
     margin: 10px auto;
 }
 
 .section-header p {
     font-size: 1rem;
-    color: #666;
+    color: var(--color-dark);
     max-width: 600px;
     margin: 0 auto;
 }
@@ -49,7 +49,7 @@
     padding: 40px 80px 40px 40px; /* Adjust padding: more on the right to push content into skewed area */
     text-align: left; /* Align text to the left */
     position: relative;
-    background-color: #f0f0f0; /* Light grey background */
+    background-color: var(--darker-white); /* Light grey background */
     z-index: 2;
     display: flex;
     flex-direction: column; /* Ensure the content inside grows */
@@ -65,7 +65,7 @@
     right: -100px;
     width: 200%;
     height: 100%;
-    background-color: #f0f0f0;
+    background-color: var(--darker-white);
     transform: skewX(20deg); /* Create the diagonal effect */
     z-index: 1;
     transform-origin: top right;
@@ -74,7 +74,7 @@
 .about-text h3 {
     font-size: 1.8rem;
     font-weight: 600;
-    color: #333;
+    color: var(--color-highlight);
     margin-bottom: 15px;
     position: relative;
     z-index: 2; /* Keep text above the background */
@@ -82,7 +82,7 @@
 
 .about-text p {
     font-size: 1rem;
-    color: #666;
+    color: var(--);
     margin-bottom: 20px;
     line-height: 1.6;
     position: relative;
@@ -92,8 +92,8 @@
 /* Button Styling: Ensure it's not full-width */
 .btn-read-more {
     display: inline-block; /* Keeps button inline */
-    background-color: #333;
-    color: #fff;
+    background-color: var(--color-dark);
+    color: var(--color-white);
     padding: 10px 20px;
     text-decoration: none;
     font-size: 1rem;
@@ -104,14 +104,14 @@
     align-self: flex-start; /* Align button to the left */
     background-color: transparent; /* Transparent background */
     border-radius: 5px;
-    border: 2px solid #333; /* Outline border */
-    color: #333;
+    border: 2px solid var(--color-dark); /* Outline border */
+    color: var(--color-dark);
 }
 
 .btn-read-more:hover {
-    background-color: #333; /* Background color on hover */
-    color: #fff; /* Change text color on hover */
-    border-color: #333;
+    background-color: var(--color-dark); /* Background color on hover */
+    color: var(--color-white); /* Change text color on hover */
+    border-color: var(--color-highlight);
 }
 
 .btn-read-more::after {
@@ -162,7 +162,7 @@
     }
 
     .about-image {
-        max-width: 100%;
+        display: none;
     }
 
     .about-image img {

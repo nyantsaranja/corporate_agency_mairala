@@ -7,9 +7,8 @@ function loadSkillsSection() {
         .then(response => response.text())
         .then(data => {
             mainContent.innerHTML += data;
-
-            // Call the function to animate the inner circles after content is loaded
-            animateInnerCircles();
+            // Wait until the section is in view to animate the inner circles
+            observeSkillsSection();
         })
         .catch(error => console.error('Error loading the skills section:', error));
 }
@@ -28,12 +27,12 @@ function animateInnerCircles() {
         },
         from: { color: '#fff', width: 6 },
         to: { color: '#fff', width: 6 },
-        step: function(state, circle) {
+        step: function (state, circle) {
             circle.path.setAttribute('stroke', state.color);
             circle.path.setAttribute('stroke-width', state.width);
 
             // Set the maximum value to 75 for 3/4 completion
-            const value = Math.round(circle.value() * 75); // Change this to limit percentage to 75%
+            const value = Math.round(circle.value() * 100); // Limiting the percentage to 75%
             if (value === 0) {
                 circle.setText('');
             } else {
@@ -63,5 +62,24 @@ function animateInnerCircles() {
     promotion.animate(0.75);  // 75% for Promotion
 }
 
-// Ensure the DOM is fully loaded before injecting the content and starting the animation
+// Function to observe when the skills section is in the viewport
+function observeSkillsSection() {
+    const skillsSection = document.querySelector('.skills-container');
+
+    // Using Intersection Observer API to detect when the section is in view
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateInnerCircles(); // Start the animation
+                observer.unobserve(entry.target); // Stop observing after the animation is triggered
+            }
+        });
+    }, {
+        threshold: 0.3 // Trigger the animation when 30% of the section is visible
+    });
+
+    observer.observe(skillsSection);
+}
+
+// Ensure the DOM is fully loaded before injecting the content
 document.addEventListener('DOMContentLoaded', loadSkillsSection);

@@ -1,12 +1,20 @@
-/* landing.css */
+/* Define color variables */
+:root {
+    --color-white: #ffffff;
+    --darker-white: #f9f9f9;
+    --color-dark: #444;
+    --color-darkest: #1d1d1d;
+    --color-dark-hover: #666;
+    --color-highlight: #997a4c;
+}
 
 /* Landing Section Styling */
 .landing {
-    background: url('../images/landing_bg.jpg') no-repeat center center/cover; /* Use your background image */
+    background: url('../images/dark-smoke-bg.jpg') no-repeat center center/cover; /* Use your background image */
     height: 100vh; /* Full viewport height */
     display: flex;
     align-items: center;
-    color: #ffffff;
+    color: var(--color-white); /* Use color variable */
     text-align: left; /* Align text to the left */
 }
 
@@ -32,15 +40,15 @@
 }
 
 .main-heading .highlight {
-    color: #B89B6F; /* Color for highlighting 'Premium' and 'Free' */
+    color: var(--color-highlight); /* Use highlight color variable */
 }
 
 /* Button Styling */
 .btn-download {
     display: inline-block;
-    background-color: #444;
-    color: #fff;
-    padding: 0.8rem 2rem;
+    background-color: var(--color-dark); /* Use dark color variable */
+    color: var(--color-white); /* Use white color variable */
+    padding: 1rem 4rem;
     border-radius: 5px;
     font-size: 1.1rem;
     text-decoration: none;
@@ -53,7 +61,7 @@
 
 /* Hover effect for the button */
 .btn-download:hover {
-    background-color: #666;
+    background-color: var(--color-dark-hover); /* Use hover color variable */
 }
 
 /* Responsive Design */
@@ -67,7 +75,6 @@
     }
 
     .btn-download {
-        padding: 0.6rem 1.5rem;
         font-size: 1rem;
     }
 
